@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmics Bio</title>
+    <link rel="stylesheet" href="Fallout4Terminal.theme.css">
+    <link rel="stylesheet" href="terminal.css">
+</head>
+<body class="visual-refresh">
+    <div class="robo-terminal">
+        <div class="robo-window">
+            <div class="robo-header">
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="width:12px;height:12px;border-radius:50%;background:rgb(var(--rgb-close-button));display:inline-block"></span>
+                    <span class="title">ROBCO Industries (tm) — Terminal</span>
+                </div>
+                <div style="color:rgba(255,255,255,0.6);font-size:13px">v4.0</div>
+            </div>
+            <main class="robo-screen" style="background:rgba(0,0,0,0.95);padding:18px 20px;min-height:360px;color:rgb(var(--rgb-text));font-family:Consolas, 'Courier New', monospace;">
+                <div id="terminal-output" style="white-space:pre-wrap;word-wrap:break-word;margin:0;font-size:15px;line-height:1.5;"></div>
+                <div id="terminal-input" style="margin-top:8px;font-family:inherit;font-size:15px;">
+                    <span id="prompt" style="color:rgb(var(--rgb-online-color));">ROBCO:\></span>
+                    <span id="typed" style="display:inline-block"></span>
+                    <span id="cursor" style="display:inline-block;width:8px;height:18px;background:rgb(var(--rgb-text));margin-left:6px;vertical-align:middle;animation:blink 1s steps(2,start) infinite"></span>
+                </div>
+            </main>
+            <div class="robo-footer">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                    <span>Theme: Fallout 4 Terminal — Content: Cosmics Bio</span>
+                    <div class="admin-actions">
+                      <button id="admin-enter" style="background:transparent;border:1px solid rgba(255,255,255,0.08);color:rgb(var(--rgb-text));padding:6px 10px;border-radius:4px;cursor:pointer">Admin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Permanent comments section below terminal -->
+    <div id="comments-section">
+        <div class="card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <strong>Comments</strong>
+                <small style="color:rgba(255,255,255,0.6)">Leave a name (no signup required)</small>
+            </div>
+            <form id="comment-form" style="margin-bottom:14px">
+                <input id="comment-name" placeholder="Your name (displayed)" maxlength="60" required />
+                <textarea id="comment-text" placeholder="Write a comment..." rows="3" style="margin-top:8px" required></textarea>
+                <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:8px">
+                    <button type="submit">Post comment</button>
+                    <small id="comment-status" style="color:rgba(255,255,255,0.6)"></small>
+                </div>
+            </form>
+            <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
+                <small style="color:rgba(255,255,255,0.6)">Recent comments:</small>
+                <div id="comments-list" style="margin-top:8px"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="terminal.js"></script>
+    <script src="comments-client.js"></script>
+    <style>
+    @keyframes blink { 50% { opacity: 0 } }
+    /* Link/icon styling inside terminal */
+    #terminal-output a { color: rgb(var(--rgb-highlight)); text-decoration: none; display:inline-flex; gap:6px; align-items:center; }
+    #terminal-output a:hover { text-decoration: underline; }
+    #terminal-output svg { width:14px; height:14px; vertical-align:middle; }
+    .terminal-line { margin-bottom:8px; }
+        /* Comments panel styles */
+        #comments-panel { width:100%; max-width:960px; margin:12px auto 0; color:rgb(var(--rgb-text)); font-family:Consolas, 'Courier New', monospace }
+        #comments-panel.hidden { display:none }
+        #comments-panel .card { background:rgba(0,0,0,0.85); padding:12px 14px; border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,0.6) }
+        #comments-list { max-height:260px; overflow:auto; margin-top:10px; }
+        .comment { border-top:1px solid rgba(255,255,255,0.03); padding:8px 0 }
+        .comment .meta { color:rgba(255,255,255,0.6); font-size:12px; margin-bottom:6px }
+        .comment .body { white-space:pre-wrap }
+        #comment-form input, #comment-form textarea { width:100%; box-sizing:border-box; background:transparent border:1px solid rgba(255,255,255,0.06); color:rgb(var(--rgb-text)); padding:8px; border-radius:4px }
+        #comment-form button { margin-top:8px; padding:8px 12px; background:rgb(var(--rgb-highlight)); border:none; color:#001; border-radius:4px; cursor:pointer }
+    </style>
+ </body>
+ </html>

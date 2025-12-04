@@ -1,0 +1,80 @@
+/* Terminal layout and theme-specific styles */
+:root{--terminal-max-width:960px}
+body.visual-refresh{margin:0}
+.robo-terminal{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box}
+.robo-window{width:100%;max-width:var(--terminal-max-width);border-radius:6px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.robo-header{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(0,0,0,0.2)}
+.robo-header .title{font-weight:700;color:rgb(var(--rgb-text))}
+.robo-screen{background:rgba(0,0,0,0.95);padding:18px 20px;min-height:360px;color:rgb(var(--rgb-text));font-family:Consolas,'Courier New',monospace}
+#terminal-output{white-space:pre-wrap;word-wrap:break-word;margin:0;font-size:15px;line-height:1.5}
+#terminal-input{margin-top:8px;font-family:inherit;font-size:15px}
+#prompt{color:rgb(var(--rgb-online-color))}
+#cursor{display:inline-block;width:8px;height:18px;background:rgb(var(--rgb-text));margin-left:6px;vertical-align:middle;animation:blink 1s steps(2,start) infinite}
+.robo-footer{padding:8px 12px;background:rgba(0,0,0,0.12);color:rgba(255,255,255,0.6);font-size:12px}
+/* Link/icon styling inside terminal */
+#terminal-output a{color:rgb(var(--rgb-highlight));text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+#terminal-output a:hover{text-decoration:underline}
+#terminal-output svg{width:14px;height:14px;vertical-align:middle}
+.terminal-line{margin-bottom:8px}
+/* Comments section styles */
+#comments-section{width:100%;max-width:var(--terminal-max-width);margin:16px auto 20px;color:rgb(var(--rgb-text));font-family:Consolas,'Courier New',monospace;padding:0 20px;box-sizing:border-box}
+#comments-section .card{background:rgba(var(--rgb-background),0.95);padding:14px 16px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+#comments-list{max-height:320px;overflow:auto;margin-top:10px}
+.comment{border-top:1px solid rgba(255,255,255,0.06);padding:10px 0}
+.comment .meta{color:rgba(255,255,255,0.6);font-size:12px;margin-bottom:6px}
+.comment .body{white-space:pre-wrap;font-size:14px;line-height:1.4}
+#comment-form input,#comment-form textarea{width:100%;box-sizing:border-box;background:transparent;border:1px solid rgba(255,255,255,0.08);color:rgb(var(--rgb-text));padding:8px;border-radius:4px;font-family:inherit}
+#comment-form button{padding:8px 12px;background:rgb(var(--rgb-highlight));border:none;color:#001;border-radius:4px;cursor:pointer;font-weight:bold}
+#comment-form button:hover{opacity:0.85}
+.comment .delete-btn{background:transparent;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);padding:4px 8px;border-radius:4px;cursor:pointer;font-size:11px}
+.comment .delete-btn:hover{background:rgba(255,0,0,0.1)}
+.admin-actions{display:flex;gap:8px;align-items:center}
+@keyframes blink{50%{opacity:0}}
+
+/* --- Color overrides: Fallout 4 Terminal Green Theme with Dark Mode --- */
+.visual-refresh {
+	--rgb-background: 0, 9, 0; /* dark green/black background */
+	--rgb-text: 74, 239, 152;   /* bright fallout green text */
+	--rgb-highlight: 74, 239, 152; /* green highlight for links/icons */
+	--rgb-online-color: 57, 255, 20; /* bright green prompt color */
+}
+
+/* apply green gradient backgrounds with subtle texture */
+body.visual-refresh {
+	background: linear-gradient(135deg, #000900 0%, #001200 50%, #000900 100%);
+	min-height: 100vh;
+}
+
+.robo-terminal {
+	background: linear-gradient(135deg, rgba(0,9,0,0.3) 0%, rgba(0,18,0,0.3) 50%, rgba(0,9,0,0.3) 100%);
+}
+
+.robo-screen {
+	background: linear-gradient(135deg, rgba(0,5,0,0.95) 0%, rgba(0,12,0,0.95) 100%) !important;
+	text-shadow: 0 0 4px rgba(74,239,152,0.2);
+}
+
+.robo-screen::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: repeating-linear-gradient(0deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px, transparent 2px, transparent 4px);
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.robo-footer {
+	background: rgba(0,6,0,0.8) !important;
+	border-top: 1px solid rgba(74,239,152,0.1);
+}
+
+#comments-section .card {
+	background: linear-gradient(135deg, rgba(0,5,0,0.95) 0%, rgba(0,12,0,0.95) 100%);
+	border: 1px solid rgba(74,239,152,0.15);
+}
+
+/* apply green gradient backgrounds instead of white/translucent light */
+
