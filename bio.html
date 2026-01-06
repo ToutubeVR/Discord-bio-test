@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmicBunny's Bio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+        body {
+            font-family: 'M PLUS Rounded 1c', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            min-height: 100vh;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .header {
+            background: repeating-conic-gradient(#2563eb 0% 25%, #1d4ed8 25% 50%) 50% / 20px 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #3b82f6, 0 0 20px #1d4ed8, 0 0 30px #1e40af, 0 0 40px #1e3a8a;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            background: linear-gradient(45deg, #dbeafe, #bfdbfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+        .bio-section {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+        .bio-section h2 {
+            background: linear-gradient(45deg, #dbeafe, #bfdbfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .links-box {
+            background: white;
+            color: #1e3a8a;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+        .links-box h2 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+        .link-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 60px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <img src="images/miku pfp.jpg" alt="Logo" class="logo">
+            <h1>CosmicBunny's Bio</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="bio-section">
+            <h2>About Me</h2>
+            <p>Hello my name is Cosmic or as known Toutube i like games and made this page muyself becuase i was bored thank you for reading please make sure there is no drama between me n you becuase i wanna stay away anyways thanks peeps stay funky and stay happy</p>
+        </div>
+        <div class="bio-section">
+            <h2>My Interests</h2>
+            <ul>
+                <li>Coding</li>
+                <li>3D Design</li>
+                <li>Gaming</li>
+                <li>Music</li>
+            </ul>
+        </div>
+        <div class="links-box">
+            <h2>My Links</h2>
+            <p><a href="https://discord.gg/p96ubteAHN" target="_blank" style="color: #1e3a8a; text-decoration: none;">Join my Discord Server</a></p>
+            <p><a href="https://steamcommunity.com/profiles/76561199125994242/" target="_blank" style="color: #1e3a8a; text-decoration: none;">My Steam Profile</a></p>
+        </div>
+    </div>
+</body>
+</html>
